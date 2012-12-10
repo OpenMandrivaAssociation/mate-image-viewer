@@ -1,11 +1,11 @@
 Summary:	The Eye of MATE image viewer
 Name:		mate-image-viewer
-Version:	1.2.0
+Version:	1.4.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://mate-desktop.org
-Source0:	http://pub.mate-desktop.org/releases/1.2/%{name}-%{version}.tar.xz
+Source0:	http://pub.mate-desktop.org/releases/%{lua: print (string.match(rpm.expand("%{version}"),"%d+.%d+"))}/%{name}-%{version}.tar.xz
 
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gtk-doc
@@ -88,10 +88,15 @@ find %{buildroot} -name *.la -delete
 %{_datadir}/applications/*
 %{_datadir}/eom
 %{_iconsdir}/hicolor/*/*/*
-# mate help files
-%{_datadir}/mate/help
 
 %files devel
 %{_includedir}/eom-2.20
 %{_libdir}/pkgconfig/eom.pc
+
+
+
+%changelog
+* Thu Jun 07 2012 Matthew Dawkins <mattydaw@mandriva.org> 1.2.0-1
++ Revision: 803206
+- imported package mate-image-viewer
 
