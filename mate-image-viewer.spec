@@ -57,7 +57,7 @@ Install this if you want to build EOG plugins.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 NOCONFIGURE=yes ./autogen.sh
